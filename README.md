@@ -1,2 +1,3 @@
-For server run #npm run dev 
-For client run #npm start
+### npm run i for install all dependensies
+## next for starting server in server run npm run dev
+## and for starte UI in client run npm start

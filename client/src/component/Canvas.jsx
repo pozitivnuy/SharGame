@@ -36,7 +36,7 @@ const Canvas = observer(() => {
             canvasState.setSessionId(params.id)
             toolState.setTool(new Brush(canvasRef.current, socket, params.id))
             socket.onopen = () => {
-                console.log('Подключение установлено')
+                console.log('connection')
                 socket.send(JSON.stringify({
                     id:params.id,
                     username: canvasState.username,
@@ -47,7 +47,7 @@ const Canvas = observer(() => {
                 let msg = JSON.parse(event.data)
                 switch (msg.method) {
                     case "connection":
-                        console.log(`пользователь ${msg.username} присоединился`)
+                        console.log(`User ${msg.username} has connected`)
                         break
                     case "draw":
                         drawHandler(msg)
